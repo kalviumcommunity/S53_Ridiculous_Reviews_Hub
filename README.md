@@ -15,6 +15,21 @@ RidiculousReviewsHub is a fun project dedicated to collecting and sharing the mo
 - **Criteria**: Reviews can be humorous, bizarre, or downright absurd. However, please ensure they are respectful and adhere to community guidelines.
 - **Format**: Each review should include the product name, platform/source, and a brief description or context to add to the amusement.
 
+## Tech Stack
+RidiculousReviewsHub is built using the following technologies:
+- Frontend: HTML, CSS, JavaScript
+- Backend: Node.js, Express
+- Database: MongoDB
+
+## Local Development Setup
+To set up RidiculousReviewsHub for local development, follow these steps:
+1. Clone the repository: `git clone https://github.com/your-username/RidiculousReviewsHub.git`
+2. Navigate to the project directory: `cd RidiculousReviewsHub`
+3. Install dependencies: `npm install`
+4. Set up the MongoDB database (ensure you have MongoDB installed locally)
+5. Run the server: `npm start`
+6. Visit `http://localhost:3000` in your web browser to view the application locally.
+
 ## Get Started
 Ready to embark on a journey through the zany realm of e-commerce reviews? Start exploring RidiculousReviewsHub now!
 
