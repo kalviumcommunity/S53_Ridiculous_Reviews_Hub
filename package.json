@@ -1,12 +1,12 @@
 {
   "name": "s53_ridiculous_reviews_hub",
   "version": "1.0.0",
-  "description": "this is read me",
+  "description": "A comprehensive hub for managing and processing reviews with a touch of humor.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "Abdul Nasir Qureshi",
+  "license": "ANQ-1.0"
 }
