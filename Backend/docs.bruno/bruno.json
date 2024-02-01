@@ -1,3 +1,11 @@
+# PR: Adding Bruno.json File - Bruno Testing Collection
+
+## Changes Made
+- Added `bruno.json` file to the "Bruno Testing" collection.
+
+## Purpose
+The purpose of this PR is to introduce a new JSON file, `bruno.json`, as part of the "Bruno Testing" collection. The file includes the following information:
+
 {
   "version": "1",
   "name": "Bruno Testing",
