@@ -11,12 +11,12 @@ app.use((err, req, res, next) => {
 
 
 // Routes
-app.get('/', (req,res) => {
+app.get('/', async (req,res) => {
     // Connect to mongoDB
-    db.connectDB().then(result => {
+    await db.connectDB().then(result => {
         res.send(`Mongo Connected : ${result}`)
     }).catch(err=> {
-        res.send(`Mongo not Connected : ${err}`)
+        res.status(500).send(`Mongo not Connected : ${err}`)
     })
 })
 
