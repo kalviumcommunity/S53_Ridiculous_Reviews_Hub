@@ -1,0 +1,12 @@
+[
+    { "CategoryId": 1, "CategoryName": "Electronics" },
+    { "CategoryId": 2, "CategoryName": "Kitchen" },
+    { "CategoryId": 3, "CategoryName": "Fitness" },
+    { "CategoryId": 4, "CategoryName": "Fashion" },
+    { "CategoryId": 5, "CategoryName": "Beauty" },
+    { "CategoryId": 6, "CategoryName": "Kids" },
+    { "CategoryId": 7, "CategoryName": "Health" },
+    { "CategoryId": 8, "CategoryName": "Automobile" },
+    { "CategoryId": 9, "CategoryName": "Books" },
+    { "CategoryId": 10, "CategoryName": "Games" }
+]

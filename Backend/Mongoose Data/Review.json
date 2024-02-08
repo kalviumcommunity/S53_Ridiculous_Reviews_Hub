@@ -1,0 +1,12 @@
+[
+    { "ReviewId": 1, "UserId": 1, "ProductId": 101, "Rating": 4.5, "ReviewText": "Great Product!", "SubmissionDate": "2023-09-22T00:00:00.000Z" },
+    { "ReviewId": 2, "UserId": 2, "ProductId": 102, "Rating": 3.9, "ReviewText": "Could be better.", "SubmissionDate": "2023-04-05T00:00:00.000Z" },
+    { "ReviewId": 3, "UserId": 3, "ProductId": 103, "Rating": 2.3, "ReviewText": "Amazing Quality.", "SubmissionDate": "2023-05-20T00:00:00.000Z" },
+    { "ReviewId": 4, "UserId": 4, "ProductId": 104, "Rating": 3.7, "ReviewText": "Not satisfied with the quality.", "SubmissionDate": "2023-10-30T00:00:00.000Z" },
+    { "ReviewId": 5, "UserId": 5, "ProductId": 105, "Rating": 4.8, "ReviewText": "Fantastic product!", "SubmissionDate": "2023-01-15T00:00:00.000Z" },
+    { "ReviewId": 6, "UserId": 6, "ProductId": 106, "Rating": 5, "ReviewText": "The design is sleek and modern.", "SubmissionDate": "2023-07-03T00:00:00.000Z" },
+    { "ReviewId": 7, "UserId": 7, "ProductId": 107, "Rating": 4.2, "ReviewText": "Expected better performance.", "SubmissionDate": "2023-08-18T00:00:00.000Z" },
+    { "ReviewId": 8, "UserId": 8, "ProductId": 108, "Rating": 3.9, "ReviewText": "So impressed!", "SubmissionDate": "2023-02-28T00:00:00.000Z" },
+    { "ReviewId": 9, "UserId": 9, "ProductId": 109, "Rating": 4.7, "ReviewText": "Highly recommended.", "SubmissionDate": "2023-03-10T00:00:00.000Z" },
+    { "ReviewId": 10, "UserId": 10, "ProductId": 110, "Rating": 4, "ReviewText": "Easy to set up and user-friendly.", "SubmissionDate": "2023-06-12T00:00:00.000Z" }
+]

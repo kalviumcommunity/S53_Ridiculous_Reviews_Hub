@@ -1,0 +1,12 @@
+[
+    { "BrandId": 1, "Brand": "FitTech" },
+    { "BrandId": 2, "Brand": "SoundWave" },
+    { "BrandId": 3, "Brand": "BrewMaster" },
+    { "BrandId": 4, "Brand": "SwiftClick" },
+    { "BrandId": 5, "Brand": "SoundSprint" },
+    { "BrandId": 6, "Brand": "ActiveLife" },
+    { "BrandId": 7, "Brand": "BlendMaster" },
+    { "BrandId": 8, "Brand": "ClearView" },
+    { "BrandId": 9, "Brand": "TravelPro" },
+    { "BrandId": 10, "Brand": "EcoHeat" }
+]
