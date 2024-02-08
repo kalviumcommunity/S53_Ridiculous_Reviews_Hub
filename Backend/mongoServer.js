@@ -1,9 +1,9 @@
 const { MongoClient } = require('mongodb');
+require("dotenv").config()
 
-const URL = 'mongodb+srv://qnasir575:25Nasir%40%40@cluster0.uq9kwqm.mongodb.net/';
 const dbName = 'Ridiculous_Reviews_Hub';
 
-const client = new MongoClient(URL, {
+const client = new MongoClient(process.env.mongoURI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
@@ -15,7 +15,7 @@ const connectDB = async () => {
         return true;
     } catch (err) {
         console.error(err);
-        return false;
+        throw err;
     }
 }
 
