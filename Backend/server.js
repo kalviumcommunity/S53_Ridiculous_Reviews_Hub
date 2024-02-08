@@ -1,4 +1,5 @@
 const express = require('express');
+const db = require('./mongoServer.js')
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -8,7 +9,17 @@ app.use((err, req, res, next) => {
     res.status(500).send('Something went wrong!');
 });
 
+
 // Routes
+app.get('/', async (req,res) => {
+    // Connect to mongoDB
+    await db.connectDB().then(result => {
+        res.send(`Mongo Connected : ${result}`)
+    }).catch(err=> {
+        res.status(500).send(`Mongo not Connected : ${err}`)
+    })
+})
+
 app.get('/ping', (req, res) => {
     res.send('Hello World');
 });

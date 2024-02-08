@@ -1,0 +1,12 @@
+[
+    { "UserId": 1, "Username": "Nasir", "Email": "nasir123@gmail.com", "RegistrationDate": "2023-07-03T00:00:00.000Z" },
+    { "UserId": 2, "Username": "Bari", "Email": "bari123@gmail.com", "RegistrationDate": "2023-03-10T00:00:00.000Z" },
+    { "UserId": 3, "Username": "Basit", "Email": "basit123@gmail.com", "RegistrationDate": "2023-06-12T00:00:00.000Z" },
+    { "UserId": 4, "Username": "Awez", "Email": "awez123@gmail.com", "RegistrationDate": "2023-09-22T00:00:00.000Z" },
+    { "UserId": 5, "Username": "Namira", "Email": "namira123@gmail.com", "RegistrationDate": "2023-02-28T00:00:00.000Z" },
+    { "UserId": 6, "Username": "Rukaiya", "Email": "rukaiya123@gmail.com", "RegistrationDate": "2023-05-20T00:00:00.000Z" },
+    { "UserId": 7, "Username": "Suraiya", "Email": "suraiya123@gmail.com", "RegistrationDate": "2023-08-18T00:00:00.000Z" },
+    { "UserId": 8, "Username": "Izhan", "Email": "izhan123@gmail.com", "RegistrationDate": "2023-01-15T00:00:00.000Z" },
+    { "UserId": 9, "Username": "Ishan", "Email": "ishan123@gmail.com", "RegistrationDate": "2023-10-30T00:00:00.000Z" },
+    { "UserId": 10, "Username": "Hunain", "Email": "hunain123@gmail.com", "RegistrationDate": "2023-04-05T00:00:00.000Z" }
+]
