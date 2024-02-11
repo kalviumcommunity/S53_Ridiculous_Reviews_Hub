@@ -1,10 +1,18 @@
 import './App.css'
+import RidiculousReviews from './Components/RidiculousReviews'
 
 function App() {
 
-  return (
+  const user1 = {
+    UserId: 1,
+    Username: 'User123',
+    Email: 'user123@example.com',
+    RegistrationDate: '2022-02-15',
+  };
+
+  return (  
     <>
-      <h1>ASAP Project landing page</h1>
+      <RidiculousReviews {...user1} />
     </>
   )
 }
