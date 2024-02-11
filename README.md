@@ -12,6 +12,7 @@ RidiculousReviewsHub is a fun project dedicated to collecting and sharing the mo
 
 ## Links
 1. Render :- https://s53-ridiculous-reviews-hub.onrender.com
+2. Deploy :- https://s53-ridiculous-reviews-hub.netlify.app/
 
 ## Contribution Guidelines
 - **Submission**: To contribute, simply fork this repository, add the review(s) you'd like to share, and submit a pull request.
