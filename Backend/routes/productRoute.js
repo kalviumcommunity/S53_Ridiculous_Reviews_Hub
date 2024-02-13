@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const Product = require('../Models/product')
 
-router.get('/', async (req,res) => {
+router.get('/get', async (req,res) => {
     try {
         const products = await Product.find({})
         res.json(products)
@@ -11,7 +11,7 @@ router.get('/', async (req,res) => {
     }
 })
 
-router.get('/:id', async (req, res) => {
+router.get('/get/:id', async (req, res) => {
     try {
         const product1 = await Product.findById(req.params.id)
         res.json(product1)
@@ -20,31 +20,87 @@ router.get('/:id', async (req, res) => {
     }
 })
 
-router.post('/', async (req, res) => {
-    const productinfo = new Product({
-        ProductId: req.body.ProductId,
-        ProductName: req.body.ProductName,
-        Brand: req.body.Brand,
-        Price: req.body.Price,
-        ReleaseDate: req.body.ReleaseDate
-    })
-
+// Route for creating product details
+router.post('/create', async (req, res) => {
     try {
-        const product1 = await productinfo.save()
-        res.json(product1)
-    } catch (err) {
-        res.send('Error')
-    }
-})
+        const productinfo = new Product({
+            name: req.body.name,
+            brand: req.body.brand,
+            category: req.body.category,
+            description: req.body.description,
+            images: req.body.images,
+            average_rating: req.body.average_rating,
+        });
 
-router.patch('/:id', async (req, res) => {
+        const newProduct = await productinfo.save();
+        res.json(newProduct);
+    } catch (err) {
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+});
+
+// Route for adding a review to an existing product
+router.post('/add-review/:productId', async (req, res) => {
+    try {
+        const productId = req.params.productId;
+        const review = {
+            reviewer_name: req.body.reviewer_name,
+            review_content: req.body.review_content,
+            rating: req.body.rating,
+            review_date: req.body.review_date,
+        };
+
+        const updatedProduct = await Product.findByIdAndUpdate(
+            productId,
+            { $push: { ridiculous_reviews: review } },
+            { new: true }
+        );
+
+        res.json(updatedProduct);
+    } catch (err) {
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+});
+
+
+// router.post('/create', async (req, res) => {
+//     const productinfo = new Product({
+//         name: req.body.name,
+//         brand: req.body.brand,
+//         category: req.body.category,
+//         description: req.body.description,
+//         images: req.body.images,
+//         average_rating: req.body.average_rating,
+//         reviewer_name: req.body.reviewer_name,
+//         review_content: req.body.review_content,
+//         rating: req.body.rating,
+//         review_date: req.body.review_date
+//     })
+
+//     try {
+//         const product1 = await productinfo.save()
+//         res.json(product1)
+//     } catch (err) {
+//         res.send('Error')
+//     }
+// })
+
+
+router.patch('/patch/:id', async (req, res) => {
     try {
         const existingProduct = await Product.findById(req.params.id)
-        existingProduct.ProductId = req.body.ProductId
-        existingProduct.ProductName = req.body.ProductName
-        existingProduct.Brand = req.body.Brand
-        existingProduct.Price = req.body.Price
-        existingProduct.ReleaseDate = req.body.ReleaseDate
+
+        existingProduct.name = req.body.name
+        existingProduct.brand = req.body.brand
+        existingProduct.category = req.body.category
+        existingProduct.description = req.body.description
+        existingProduct.images = req.body.images
+        existingProduct.average_rating = req.body.average_rating
+        existingProduct.reviewer_name = req.body.reviewer_name
+        existingProduct.review_content = req.body.review_content
+        existingProduct.rating = req.body.rating
+        existingProduct.review_date = req.body.review_date
+
         const updatedProduct = await existingProduct.save()
         res.json(updatedProduct)
     } catch (err) {
@@ -52,12 +108,12 @@ router.patch('/:id', async (req, res) => {
     }
 })
 
-router.delete('/:id', async (req, res) => {
+router.delete('/delete/:id', async (req, res) => {
     try {
         const removedProduct = await Product.findByIdAndDelete(req.params.id)
 
         if (!removedProduct) {
-            return res.status(404).json({ error: 'Product not found' });
+            return res.status(404).json({ error: 'Product not found' }); 
         }
 
         res.json(removedProduct)
@@ -65,5 +121,6 @@ router.delete('/:id', async (req, res) => {
         res.status(500).json({ error: 'Internal Server Error' });
     }
 })
+
 
 module.exports = router

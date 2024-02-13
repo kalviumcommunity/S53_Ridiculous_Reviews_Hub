@@ -1,12 +1,218 @@
 [
-    { "UserId": 1, "Username": "Nasir", "Email": "nasir123@gmail.com", "RegistrationDate": "2023-07-03T00:00:00.000Z" },
-    { "UserId": 2, "Username": "Bari", "Email": "bari123@gmail.com", "RegistrationDate": "2023-03-10T00:00:00.000Z" },
-    { "UserId": 3, "Username": "Basit", "Email": "basit123@gmail.com", "RegistrationDate": "2023-06-12T00:00:00.000Z" },
-    { "UserId": 4, "Username": "Awez", "Email": "awez123@gmail.com", "RegistrationDate": "2023-09-22T00:00:00.000Z" },
-    { "UserId": 5, "Username": "Namira", "Email": "namira123@gmail.com", "RegistrationDate": "2023-02-28T00:00:00.000Z" },
-    { "UserId": 6, "Username": "Rukaiya", "Email": "rukaiya123@gmail.com", "RegistrationDate": "2023-05-20T00:00:00.000Z" },
-    { "UserId": 7, "Username": "Suraiya", "Email": "suraiya123@gmail.com", "RegistrationDate": "2023-08-18T00:00:00.000Z" },
-    { "UserId": 8, "Username": "Izhan", "Email": "izhan123@gmail.com", "RegistrationDate": "2023-01-15T00:00:00.000Z" },
-    { "UserId": 9, "Username": "Ishan", "Email": "ishan123@gmail.com", "RegistrationDate": "2023-10-30T00:00:00.000Z" },
-    { "UserId": 10, "Username": "Hunain", "Email": "hunain123@gmail.com", "RegistrationDate": "2023-04-05T00:00:00.000Z" }
+  {
+    "name": "Glow-in-the-Dark Toilet Paper",
+    "brand": "Luminous Loo",
+    "category": "Bathroom Supplies",
+    "description": "Illuminate your bathroom experience with this glow-in-the-dark toilet paper!",
+    "images": [],
+    "average_rating": 3.8,
+    "ridiculous_reviews": [
+      {
+        "reviewer_name": "ToiletTerror",
+        "review_content": "I never thought I'd need a map to find my way to the loo until I installed this! 5 stars for hilarity!",
+        "rating": 5,
+        "review_date": "2023-07-21"
+      }
+    ]
+  },
+  {
+    "name": "Unicorn Meat",
+    "brand": "Mythical Meats",
+    "category": "Canned Goods",
+    "description": "Experience the magical taste of unicorn meat in every bite!",
+    "images": [],
+    "average_rating": 2.5,
+    "ridiculous_reviews": [
+      {
+        "reviewer_name": "RainbowEater",
+        "review_content": "Tastes like chicken, looks like glitter. 3 stars for the fun but lost a couple for the indigestion.",
+        "rating": 3,
+        "review_date": "2023-04-11"
+      },
+      {
+        "reviewer_name": "MythicalReviewer",
+        "review_content": "Didn't make me fly, but it did give me a rainbow mustache! 2 stars for misleading claims.",
+        "rating": 2,
+        "review_date": "2023-06-05"
+      }
+    ]
+  },
+  {
+    "name": "Inflatable Toast Pillow",
+    "brand": "Puffy Pastries",
+    "category": "Home Decor",
+    "description": "Add a touch of carb-filled comfort to your living space with this inflatable toast pillow!",
+    "images": [],
+    "average_rating": 4.2,
+    "ridiculous_reviews": [
+      {
+        "reviewer_name": "ToastLover77",
+        "review_content": "Finally, a pillow that's as comforting as a warm slice of toast! 5 stars for creativity.",
+        "rating": 5,
+        "review_date": "2023-02-28"
+      },
+      {
+        "reviewer_name": "PillowPirate",
+        "review_content": "It's like sleeping on a cloud... of buttery goodness! 4 stars for the fluffiness.",
+        "rating": 4,
+        "review_date": "2023-08-17"
+      }
+    ]
+  },
+  {
+    "name": "Singing Fish Shower Head",
+    "brand": "Aquatic Anthems",
+    "category": "Bathroom Fixtures",
+    "description": "Turn your shower into a concert with this singing fish shower head!",
+    "images": [],
+    "average_rating": 3.6,
+    "ridiculous_reviews": [
+      {
+        "reviewer_name": "ShowerSongbird",
+        "review_content": "My morning showers have turned into underwater operas! 4 stars for the unexpected entertainment.",
+        "rating": 4,
+        "review_date": "2023-09-02"
+      },
+      {
+        "reviewer_name": "FishFiasco",
+        "review_content": "I was hoping for Mozart, got something closer to a dying seal. 2 stars for effort.",
+        "rating": 2,
+        "review_date": "2023-11-19"
+      }
+    ]
+  },
+  {
+    "name": "Selfie Toaster",
+    "brand": "Ego Toast",
+    "category": "Kitchen Appliances",
+    "description": "Put your face on your toast with this selfie toaster!",
+    "images": [],
+    "average_rating": 4.1,
+    "ridiculous_reviews": [
+      {
+        "reviewer_name": "ToastMaster3000",
+        "review_content": "Now my breakfast selfies are just as crispy as my bacon! 5 stars for innovation.",
+        "rating": 5,
+        "review_date": "2023-10-14"
+      },
+      {
+        "reviewer_name": "SelfieQueen",
+        "review_content": "Tried to take a selfie with it, ended up with burnt eyebrows. 3 stars for the laughs.",
+        "rating": 3,
+        "review_date": "2023-12-06"
+      }
+    ]
+  },
+  {
+    "name": "Pet Rock 2.0",
+    "brand": "Stone Pets",
+    "category": "Pet Supplies",
+    "description": "Upgrade your pet game with the next evolution of the iconic Pet Rock!",
+    "images": [],
+    "average_rating": 2.9,
+    "ridiculous_reviews": [
+      {
+        "reviewer_name": "RockEnthusiast",
+        "review_content": "I don't know what I expected... but it's still just a rock. 3 stars for nostalgia.",
+        "rating": 3,
+        "review_date": "2023-01-19"
+      },
+      {
+        "reviewer_name": "DisappointedDaisy",
+        "review_content": "Thought it would bark at least. 2 stars for being a conversation starter.",
+        "rating": 2,
+        "review_date": "2023-05-30"
+      }
+    ]
+  },
+  {
+    "name": "Portable Sneeze Guard",
+    "brand": "GermaGuard",
+    "category": "Health & Safety",
+    "description": "Take your personal bubble wherever you go with this portable sneeze guard!",
+    "images": [],
+    "average_rating": 4.5,
+    "ridiculous_reviews": [
+      {
+        "reviewer_name": "BubbleBuddy",
+        "review_content": "Feel like a VIP everywhere I go now! 5 stars for the invisible forcefield.",
+        "rating": 5,
+        "review_date": "2023-03-25"
+      },
+      {
+        "reviewer_name": "GuardianAngel",
+        "review_content": "People keep mistaking me for a walking buffet. 4 stars for the protection, -1 star for the confusion.",
+        "rating": 4,
+        "review_date": "2023-07-09"
+      }
+    ]
+  },
+  {
+    "name": "Banana Slicer",
+    "brand": "Yellow Wonder",
+    "category": "Kitchen Gadgets",
+    "description": "Slice your bananas with ease using this banana slicer!",
+    "images": [],
+    "average_rating": 3.2,
+    "ridiculous_reviews": [
+      {
+        "reviewer_name": "BananaKing",
+        "review_content": "Who needs knives when you have a banana slicer? 4 stars for banana precision.",
+        "rating": 4,
+        "review_date": "2023-08-02"
+      },
+      {
+        "reviewer_name": "SlicingSamantha",
+        "review_content": "It slices, it dices, it... mostly just smashes. 2 stars for effort.",
+        "rating": 2,
+        "review_date": "2023-12-20"
+      }
+    ]
+  },
+  {
+    "name": "Flamingo Lawn Ornaments",
+    "brand": "Flamboyant Flamingos",
+    "category": "Outdoor Decor",
+    "description": "Turn your yard into a flamboyant paradise with these flamingo lawn ornaments!",
+    "images": [],
+    "average_rating": 4.8,
+    "ridiculous_reviews": [
+      {
+        "reviewer_name": "FlamingoFanatic",
+        "review_content": "My neighbors thought I was hosting a flamboyance of real flamingos! 5 stars for the confusion.",
+        "rating": 5,
+        "review_date": "2023-05-15"
+      },
+      {
+        "reviewer_name": "LawnLover",
+        "review_content": "Adds a touch of pink to my otherwise dull lawn! 4 stars for the whimsy.",
+        "rating": 4,
+        "review_date": "2023-09-28"
+      }
+    ]
+  },
+  {
+    "name": "Desktop Cat Hammock",
+    "brand": "Purrfect Perch",
+    "category": "Office Accessories",
+    "description": "Give your feline friend a cozy spot to hang out while you work with this desktop cat hammock!",
+    "images": [],
+    "average_rating": 4.6,
+    "ridiculous_reviews": [
+      {
+        "reviewer_name": "CatLover123",
+        "review_content": "My cat now runs my office from her throne! 5 stars for feline productivity.",
+        "rating": 5,
+        "review_date": "2023-11-10"
+      },
+      {
+        "reviewer_name": "HammockHero",
+        "review_content": "Was hoping it'd come with a tiny umbrella. 4 stars for the cat's enjoyment.",
+        "rating": 4,
+        "review_date": "2023-12-27"
+      }
+    ]
+  }
 ]
+      
+      
