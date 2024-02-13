@@ -1,0 +1,22 @@
+{
+    "name": "Unicorn Meat",
+    "brand": "Mythical Meats",
+    "category": "Canned Goods",
+    "description": "Experience the magical taste of unicorn meat in every bite!",
+    "images": [],
+    "average_rating": 2.5,
+    "ridiculous_reviews": [
+      {
+        "reviewer_name": "RainbowEater",
+        "review_content": "Tastes like chicken, looks like glitter. 3 stars for the fun but lost a couple for the indigestion.",
+        "rating": 3,
+        "review_date": "2023-04-11"
+      },
+      {
+        "reviewer_name": "MythicalReviewer",
+        "review_content": "Didn't make me fly, but it did give me a rainbow mustache! 2 stars for misleading claims.",
+        "rating": 2,
+        "review_date": "2023-06-05"
+      }
+    ]
+  }
