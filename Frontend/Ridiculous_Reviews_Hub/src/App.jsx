@@ -3,22 +3,25 @@ import { useState, useEffect } from 'react';
 import axios from 'axios'
 import Navbar from './Components/Navbar'
 import Product from './Components/Products';
-import data from './Components/fakedata.json'
+// import data from './Components/fakedata.json'
 
 function App() {
 
-  const [ users, setUsers] = useState([])
+  const [ products, setProducts] = useState([])
 
   useEffect(() => {
-    axios.get('process.env.mongoURI')
-    .then(users => setUsers(users.data))
+    axios.get('https://s53-ridiculous-reviews-hub.onrender.com/productRoute/get')
+    .then(response => setProducts(response.data))
     .catch(err => console.log(err))
   }, [])
 
   return (  
     <>
       <Navbar />
-      <Product data={data} />
+      {products.map(product => {
+        return(
+        <Product key={product._id} product={product} />
+      )})}
     </>
   )
 }
