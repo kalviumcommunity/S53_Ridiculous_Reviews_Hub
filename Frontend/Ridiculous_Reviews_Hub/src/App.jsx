@@ -1,27 +1,26 @@
-import './App.css'
 import { useState, useEffect } from 'react';
 import axios from 'axios'
-import Navbar from './Components/Navbar'
-import Product from './Components/Products';
+import Navbar from './Components/Navbar/Navbar'
+import Product from './Components/Product/Products';
+import Home from './Components/Home/Home'
+import SignIn from './Components/SignIn/SignIn'
+import AboutUs from './Components/AboutUs/AboutUs'
+import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom'
+import './App.css'
+import AllRoutes from './allRoutes/AllRoutes';
+import Footer from './Components/Footer/Footer';
 // import data from './Components/fakedata.json'
 
 function App() {
 
-  const [ products, setProducts] = useState([])
 
-  useEffect(() => {
-    axios.get('https://s53-ridiculous-reviews-hub.onrender.com/productRoute/get')
-    .then(response => setProducts(response.data))
-    .catch(err => console.log(err))
-  }, [])
-
-  return (  
+  return (
     <>
-      <Navbar />
-      {products.map(product => {
-        return(
-        <Product key={product._id} product={product} />
-      )})}
+      <div>
+        <Navbar />
+        <AllRoutes/>
+        <Footer />
+      </div>
     </>
   )
 }
