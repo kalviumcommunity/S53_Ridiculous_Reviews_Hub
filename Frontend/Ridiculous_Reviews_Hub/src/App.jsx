@@ -1,5 +1,7 @@
+import './App.css'
 import { useState, useEffect } from 'react';
 import axios from 'axios'
+<<<<<<< HEAD
 import Navbar from './Components/Navbar/Navbar'
 // import Product from './Components/Product/Products';
 // import Home from './Components/Home/Home'
@@ -11,17 +13,26 @@ import './App.css'
 import AllRoutes from './allRoutes/AllRoutes';
 import Footer from './Components/Footer/Footer';
 // import data from './Components/fakedata.json'
+=======
+import Navbar from './Components/Navbar'
+import Product from './Components/Products';
+import data from './Components/fakedata.json'
+>>>>>>> main
 
 function App() {
 
+  const [ users, setUsers] = useState([])
 
-  return (
+  useEffect(() => {
+    axios.get('process.env.mongoURI')
+    .then(users => setUsers(users.data))
+    .catch(err => console.log(err))
+  }, [])
+
+  return (  
     <>
-      <div>
-        <Navbar />
-        <AllRoutes/>
-        <Footer />
-      </div>
+      <Navbar />
+      <Product data={data} />
     </>
   )
 }
