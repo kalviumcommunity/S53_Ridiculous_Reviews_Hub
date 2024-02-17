@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect} from "react";
 import './Home.css'
 import video1 from '../../assets/homeVideo.mp4'
 import { FaRegUserCircle } from "react-icons/fa";

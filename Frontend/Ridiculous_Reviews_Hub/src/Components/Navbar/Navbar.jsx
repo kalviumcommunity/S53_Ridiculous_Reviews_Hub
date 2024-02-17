@@ -24,7 +24,7 @@ const Navbar = () => {
   }
 
   return (
-    <section className='navBarSection'>  
+    <div className='navBarSection'>  
 
           <header className="header flex">
 
@@ -65,7 +65,7 @@ const Navbar = () => {
 
           </header>
 
-    </section>
+    </div>
   )
 }
 

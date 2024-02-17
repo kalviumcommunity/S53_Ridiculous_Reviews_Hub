@@ -48,7 +48,9 @@ html {
   gap: 1.5rem;
 }
 .main .secContent .singleProduct {
-  height: 550px;
+  height: -moz-fit-content;
+  height: fit-content;
+  min-height: 550px;
   row-gap: 10px;
   border-radius: 10px;
   align-items: center;

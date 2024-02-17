@@ -53,10 +53,9 @@ html{
         gap: 1.5rem;
 
         .singleProduct{
-            height: 550px;
-            // display: grid;
+            height: fit-content;
+            min-height: 550px;
             row-gap: 10px;
-            // padding: 1rem;
             border-radius: 10px;
             align-items: center;
             background: var(--cardBG);

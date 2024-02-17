@@ -3,6 +3,8 @@ import React from 'react';
 import Modal from 'react-modal';
 import './Reviews.css';
 import { Link, } from 'react-router-dom'
+import { IoCloseCircleOutline } from "react-icons/io5";
+
 
 import {
     Accordion,
@@ -25,8 +27,8 @@ function ReviewModal({ isOpen, reviews, onRequestClose, productId }) {
             ariaHideApp={false}
         >
             <div className="modal-content">
-                <button className="btn" ><Link to={`/add-review/${productId}`}>Add Review</Link></button>
-                <button className="close-btn btn" onClick={onRequestClose}>Close</button>
+                <button className="btn" ><Link to={`/add-review/${productId}`}>+ Add Review</Link></button>
+                <button className="close-btn btn" onClick={onRequestClose}><IoCloseCircleOutline className='icon' /></button>
                 <h3>Ridiculous Reviews</h3>
                 <div className="reviews-list">
                     {reviews.map((review, index) => (
