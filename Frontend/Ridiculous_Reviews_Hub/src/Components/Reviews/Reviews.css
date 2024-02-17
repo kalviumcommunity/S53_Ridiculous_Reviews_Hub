@@ -12,12 +12,14 @@
   overflow-y: auto;
 }
 .modal .modal-content {
-  width: 500px;
-  max-width: 600px;
+  min-width: 500px;
+}
+.modal h3 {
+  margin-top: 1rem;
 }
 .modal .close-btn {
   position: absolute;
-  top: 10px;
+  top: 15px;
   right: 10px;
   background: none;
   border: none;
@@ -31,6 +33,12 @@
   border-bottom: 1px solid #ddd;
   padding-bottom: 10px;
 }
+.modal .reviews-list .review .btns {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
 
 .overlay {
   position: fixed;
@@ -42,4 +50,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media screen and (min-height: 530px) {
+  .modal .reviews-list .review .btns {
+    justify-content: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
 }/*# sourceMappingURL=Reviews.css.map */
