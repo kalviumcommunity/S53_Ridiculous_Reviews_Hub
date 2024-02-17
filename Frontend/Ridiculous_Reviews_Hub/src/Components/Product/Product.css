@@ -16,8 +16,8 @@ html {
   scroll-behavior: smooth;
 }
 
-.grid {
-  display: flex;
+.grid_main {
+  background: var(--bodyColor);
 }
 
 .main {
@@ -46,17 +46,15 @@ html {
   margin-top: 1rem;
   justify-content: center;
   gap: 1.5rem;
-  display: flex;
 }
 .main .secContent .singleProduct {
-  height: 100%;
+  height: 550px;
   row-gap: 10px;
   border-radius: 10px;
   align-items: center;
   background: var(--cardBG);
   box-shadow: 0 2px 4px rgba(140, 140, 141, 0.549);
   overflow: hidden;
-  justify-items: center;
 }
 .main .secContent .singleProduct:hover {
   background: var(--whiteColor);
@@ -136,4 +134,23 @@ html {
 .main .secContent .singleProduct .btn .icon {
   align-self: center;
   font-size: 18px;
+}
+
+@media screen and (min-width: 500px) {
+  .secTitle {
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  .secTitle .title {
+    font-size: 1rem;
+  }
+  .secTitle .title::after {
+    width: 155px !important;
+  }
+  .secContent {
+    margin-top: 1rem;
+  }
+  .secContent .singleProduct {
+    height: auto;
+  }
 }/*# sourceMappingURL=Product.css.map */

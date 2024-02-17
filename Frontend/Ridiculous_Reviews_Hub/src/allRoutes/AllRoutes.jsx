@@ -1,12 +1,16 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import List from '../Components/List'
 import Home from '../Components/Home/Home'
 import AboutUs from '../Components/AboutUs/AboutUs'
 import SignIn from '../Components/SignIn/SignIn'
+import AddReview from '../Components/AddReview/AddReview'
+import UpdateReview from '../Components/UpdateReview/UpdateReview'
 
 
 function AllRoutes() {
+
+  // let { productId } = useParams()
 
   return (
           <Routes>
@@ -17,6 +21,8 @@ function AllRoutes() {
                 } />
                 <Route exact path="/aboutUs" element={<AboutUs />} />
                 <Route exact path="/signIn" element={<SignIn />} />
+                <Route exact path="/updateReview" element={<UpdateReview />} />
+                <Route exact path="/add-review/:productId" element={<AddReview />} />
                 
           </Routes>
   )
