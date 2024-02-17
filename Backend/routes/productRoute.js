@@ -24,6 +24,7 @@ router.get('/get/:id', async (req, res) => {
 router.post('/create', async (req, res) => {
     try {
         const productinfo = new Product({
+            _id: req.body.params,
             name: req.body.name,
             brand: req.body.brand,
             category: req.body.category,
@@ -61,29 +62,6 @@ router.post('/add-review/:productId', async (req, res) => {
         res.status(500).json({ error: 'Internal Server Error' });
     }
 });
-
-
-// router.post('/create', async (req, res) => {
-//     const productinfo = new Product({
-//         name: req.body.name,
-//         brand: req.body.brand,
-//         category: req.body.category,
-//         description: req.body.description,
-//         images: req.body.images,
-//         average_rating: req.body.average_rating,
-//         reviewer_name: req.body.reviewer_name,
-//         review_content: req.body.review_content,
-//         rating: req.body.rating,
-//         review_date: req.body.review_date
-//     })
-
-//     try {
-//         const product1 = await productinfo.save()
-//         res.json(product1)
-//     } catch (err) {
-//         res.send('Error')
-//     }
-// })
 
 
 router.patch('/patch/:id', async (req, res) => {

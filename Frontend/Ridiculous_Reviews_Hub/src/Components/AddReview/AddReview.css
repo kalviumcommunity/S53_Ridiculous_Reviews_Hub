@@ -1,0 +1,37 @@
+.add-review-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+.add-review-container h2 {
+  margin-bottom: 20px;
+}
+.add-review-container label {
+  display: block;
+  margin-bottom: 10px;
+}
+.add-review-container input[type=text],
+.add-review-container input[type=number],
+.add-review-container input[type=date],
+.add-review-container textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.add-review-container button[type=submit] {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.add-review-container button[type=submit]:hover {
+  background-color: #0056b3;
+}/*# sourceMappingURL=AddReview.css.map */
