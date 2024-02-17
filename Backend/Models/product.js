@@ -43,7 +43,7 @@ const productSchema = new mongoose.Schema({
             max: 5
         },
         review_date: {
-            type: Date,
+            type: String,
             required: true
         }
     }]
