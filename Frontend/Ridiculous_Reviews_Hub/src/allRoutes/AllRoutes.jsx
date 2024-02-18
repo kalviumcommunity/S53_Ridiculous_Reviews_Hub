@@ -10,8 +10,6 @@ import UpdateReview from '../Components/UpdateReview/UpdateReview'
 
 function AllRoutes() {
 
-  // let { productId } = useParams()
-
   return (
           <Routes>
                 
@@ -21,7 +19,7 @@ function AllRoutes() {
                 } />
                 <Route exact path="/aboutUs" element={<AboutUs />} />
                 <Route exact path="/signIn" element={<SignIn />} />
-                <Route exact path="/updateReview" element={<UpdateReview />} />
+                <Route exact path="/edit-Review/:_id" element={<UpdateReview />} />
                 <Route exact path="/add-review/:productId" element={<AddReview />} />
                 
           </Routes>

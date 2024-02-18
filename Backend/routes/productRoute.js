@@ -1,6 +1,5 @@
 const express = require('express')
 const router = express.Router()
-const Joi = require('joi')
 const Product = require('../Models/product')
 
 router.get('/get', async (req,res) => {
@@ -11,6 +10,37 @@ router.get('/get', async (req,res) => {
         console.error(err)
     }
 })
+
+// to get the review
+router.get('/get/review/:reviewId', async (req, res) => {
+    try {
+        const reviewId = req.params.reviewId;
+
+        // Find the review in all products
+        const products = await Product.find({});
+        let foundReview = null;
+
+        products.forEach(product => {
+            const review = product.ridiculous_reviews.id(reviewId);
+            if (review) {
+                foundReview = review;
+                return;
+            }
+        });
+
+        if (!foundReview) {
+            return res.status(404).json({ message: "Review not found" });
+        }
+
+        res.json(foundReview);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ message: "Internal server error" });
+    }
+});
+
+
+
 
 // Route for adding a review to an existing product
 router.post('/add-review/:productId', async (req, res) => {
