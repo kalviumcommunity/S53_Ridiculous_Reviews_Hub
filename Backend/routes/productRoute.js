@@ -1,5 +1,6 @@
 const express = require('express')
 const router = express.Router()
+const Joi = require('joi')
 const Product = require('../Models/product')
 
 router.get('/get', async (req,res) => {
@@ -10,35 +11,6 @@ router.get('/get', async (req,res) => {
         console.error(err)
     }
 })
-
-router.get('/get/:id', async (req, res) => {
-    try {
-        const product1 = await Product.findById(req.params.id)
-        res.json(product1)
-    } catch (err) {
-        res.send(err)
-    }
-})
-
-// Route for creating product details
-router.post('/create', async (req, res) => {
-    try {
-        const productinfo = new Product({
-            _id: req.body.params,
-            name: req.body.name,
-            brand: req.body.brand,
-            category: req.body.category,
-            description: req.body.description,
-            images: req.body.images,
-            average_rating: req.body.average_rating,
-        });
-
-        const newProduct = await productinfo.save();
-        res.json(newProduct);
-    } catch (err) {
-        res.status(500).json({ error: 'Internal Server Error' });
-    }
-});
 
 // Route for adding a review to an existing product
 router.post('/add-review/:productId', async (req, res) => {
@@ -63,42 +35,57 @@ router.post('/add-review/:productId', async (req, res) => {
     }
 });
 
+//Route to update(patch) the previous written review
+router.patch('/edit-review/:reviewId', async (req, res) => {
+    const reviewId = req.params.reviewId;
 
-router.patch('/patch/:id', async (req, res) => {
     try {
-        const existingProduct = await Product.findById(req.params.id)
+        const result = await Product.findOneAndUpdate(
+            { 'ridiculous_reviews._id': reviewId }, // Match the _id within the ridiculous_reviews array
+            { 
+                $set: {
+                    'ridiculous_reviews.$.reviewer_name': req.body.reviewer_name,
+                    'ridiculous_reviews.$.review_content': req.body.review_content,
+                    'ridiculous_reviews.$.rating': req.body.rating,
+                    'ridiculous_reviews.$.review_date': req.body.review_date
+                }
+            },
+            { new: true }
+        );
 
-        existingProduct.name = req.body.name
-        existingProduct.brand = req.body.brand
-        existingProduct.category = req.body.category
-        existingProduct.description = req.body.description
-        existingProduct.images = req.body.images
-        existingProduct.average_rating = req.body.average_rating
-        existingProduct.reviewer_name = req.body.reviewer_name
-        existingProduct.review_content = req.body.review_content
-        existingProduct.rating = req.body.rating
-        existingProduct.review_date = req.body.review_date
-
-        const updatedProduct = await existingProduct.save()
-        res.json(updatedProduct)
-    } catch (err) {
-        res.send(err)
-    }
-})
-
-router.delete('/delete/:id', async (req, res) => {
-    try {
-        const removedProduct = await Product.findByIdAndDelete(req.params.id)
-
-        if (!removedProduct) {
-            return res.status(404).json({ error: 'Product not found' }); 
+        if (result) {
+            res.json(result);
+        } else {
+            console.log("No document found matching the query criteria.");
+            res.status(404).json({ error: "No document found matching the query criteria." });
         }
 
-        res.json(removedProduct)
-    } catch (err) {
-        res.status(500).json({ error: 'Internal Server Error' });
+    } catch (error) {
+        console.log("Error:", error.message);
+        res.status(500).json({ error: error.message });
     }
-})
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 module.exports = router
