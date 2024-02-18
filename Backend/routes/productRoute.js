@@ -67,6 +67,30 @@ router.patch('/edit-review/:reviewId', async (req, res) => {
 });
 
 
+router.delete('/delete-review/:reviewId', async (req, res) => {
+    const reviewId = req.params.reviewId;
+
+    try {
+        const result = await Product.findOneAndUpdate(
+            // Match the _id within the ridiculous_reviews array
+            { 'ridiculous_reviews._id': reviewId }, 
+            // Remove the review with the specified _id from the array
+            { $pull: { 'ridiculous_reviews': { _id: reviewId } } },
+            { new: true }
+        );
+
+        if (result) {
+            res.json(result);
+        } else {
+            console.log("No document found matching the query criteria.");
+            res.status(404).json({ error: "No document found matching the query criteria." });
+        }
+
+    } catch (error) {
+        console.log("Error:", error.message);
+        res.status(500).json({ error: error.message });
+    }
+});
 
 
 
