@@ -1,6 +1,6 @@
 .add-review-container {
   max-width: 400px;
-  margin: 2rem auto; /* Auto margin for horizontal centering */
+  margin: 2rem auto;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -12,7 +12,8 @@
 }
 
 .add-review-container label {
-  display: block;
+  display: flex;
+  flex-direction: column;
   margin-bottom: 10px;
 }
 

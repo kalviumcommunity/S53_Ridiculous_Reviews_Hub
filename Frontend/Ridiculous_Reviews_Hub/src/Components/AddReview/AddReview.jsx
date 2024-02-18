@@ -15,6 +15,14 @@ function AddReview() {
 
     const submitReview = async (e) => {
         e.preventDefault();
+
+        for (const key in review) {
+            if (!review[key]) {
+                alert(`Please fill in ${key.replace('_', ' ')}`);
+                return; 
+            }
+        }
+
         try {
             const response = await axios.post(`https://s53-ridiculous-reviews-hub.onrender.com/productRoute/add-review/${productId}`, review);
             alert("Review Added Sucessfully")
@@ -33,7 +41,7 @@ function AddReview() {
 
     const handleChange = (event) => {
         const { name, value } = event.target;
-        setReview({ [name]: value })
+        setReview({ ...review, [name]: value })
     }
 
     return (
