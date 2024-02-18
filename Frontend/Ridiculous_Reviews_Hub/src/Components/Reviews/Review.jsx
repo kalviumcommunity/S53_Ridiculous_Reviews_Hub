@@ -2,7 +2,7 @@
 import React from 'react';
 import Modal from 'react-modal';
 import './Reviews.css';
-import { Link, } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { IoCloseCircleOutline } from "react-icons/io5";
 
 
@@ -14,8 +14,18 @@ import {
     AccordionIcon,
     Box,
 } from '@chakra-ui/react'
+import axios from 'axios';
 
 function ReviewModal({ isOpen, reviews, onRequestClose, productId }) {
+
+    const handleDelete = async (reviewId) => {
+        try {
+            await axios.delete(`https://s53-ridiculous-reviews-hub.onrender.com/productRoute/delete-review/${reviewId}`);
+            window.location.reload();
+        } catch (error) {
+            console.log('Error:', error);
+        }
+    };
 
     return (
         <Modal
@@ -52,8 +62,8 @@ function ReviewModal({ isOpen, reviews, onRequestClose, productId }) {
                                     <p>Review Content: {review.review_content}</p>
 
                                     <div className="btns">
-                                        <button className='btn'>EDIT</button>
-                                        <button className='btn'>DELETE</button>
+                                        <button className='btn'><Link to={`/edit-review/${review._id}`}>EDIT</Link></button>
+                                        <button className='btn' onClick={(e) => handleDelete(review._id)}>DELETE</button>
                                     </div>
 
                                 </AccordionPanel>
