@@ -14,9 +14,7 @@ function AllRoutes() {
           <Routes>
                 
                 <Route exact path="/" element={<Home />} />
-                <Route exact path="/products" element={
-                <List/>
-                } />
+                <Route exact path="/products" element={<List/>} />
                 <Route exact path="/aboutUs" element={<AboutUs />} />
                 <Route exact path="/signIn" element={<SignIn />} />
                 <Route exact path="/edit-Review/:_id" element={<UpdateReview />} />
