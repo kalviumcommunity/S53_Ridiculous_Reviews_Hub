@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const Product = require('../Models/product')
+const validateReview  = require('../Validation/Validation')
 
 router.get('/get', async (req,res) => {
     try {
@@ -46,12 +47,21 @@ router.get('/get/review/:reviewId', async (req, res) => {
 router.post('/add-review/:productId', async (req, res) => {
     try {
         const productId = req.params.productId;
+        const reviewData = req.body;
+
+        // Validate review data
+        const { error } = await validateReview(reviewData);
+        if (error) {
+            return res.status(400).json({ error: error.details });
+        }
+
         const review = {
             reviewer_name: req.body.reviewer_name,
             review_content: req.body.review_content,
             rating: req.body.rating,
             review_date: req.body.review_date,
         };
+
 
         const updatedProduct = await Product.findByIdAndUpdate(
             productId,
@@ -68,6 +78,14 @@ router.post('/add-review/:productId', async (req, res) => {
 //Route to update(patch) the previous written review
 router.patch('/edit-review/:reviewId', async (req, res) => {
     const reviewId = req.params.reviewId;
+    const reviewData = req.body;
+
+
+    // Validate review data
+    const { error } = await validateReview(reviewData);
+    if (error) {
+        return res.status(400).json({ error: error.details });
+    }
 
     try {
         const result = await Product.findOneAndUpdate(
@@ -96,7 +114,7 @@ router.patch('/edit-review/:reviewId', async (req, res) => {
     }
 });
 
-
+// Route to delete the review
 router.delete('/delete-review/:reviewId', async (req, res) => {
     const reviewId = req.params.reviewId;
 
@@ -121,25 +139,6 @@ router.delete('/delete-review/:reviewId', async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 module.exports = router
