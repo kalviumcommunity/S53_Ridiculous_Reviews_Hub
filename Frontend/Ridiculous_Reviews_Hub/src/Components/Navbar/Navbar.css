@@ -76,7 +76,7 @@ html {
   .header .navBar .navLists .btn {
     margin-top: 1rem;
   }
-  .header .navBar .navLists .btn a {
+  .header .navBar .navLists .btn p {
     font-weight: 600;
     color: var(--whiteColor);
   }

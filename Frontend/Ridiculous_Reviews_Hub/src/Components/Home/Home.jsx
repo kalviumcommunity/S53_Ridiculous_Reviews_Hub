@@ -1,4 +1,5 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
+import axios from "axios";
 import './Home.css'
 import video1 from '../../assets/homeVideo.mp4'
 import { FaRegUserCircle } from "react-icons/fa";
@@ -13,7 +14,45 @@ import Aos from 'aos'
 import 'aos/dist/aos.css'
 
 
+
 export const Home = () => {
+
+    const [ user, setUser ] =useState({
+        username: "",
+        password: ""
+    })
+    
+    //Function to handle the submit
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+    
+        for (const key in user) {
+            if (!user[key]) {
+                alert(`Please fill in ${key.replace('_', ' ')}`);
+                return; 
+            }
+        }
+
+        try{
+            const response = await axios.post(`https://s53-ridiculous-reviews-hub.onrender.com/auth/login`, user)
+            alert("User logged in Sucessfully")
+            console.log('User logged successfully', response.data);
+            setUser({
+                username: "",
+                password: ""
+            })
+            window.location.reload();
+        } catch (error) {
+            console.log(error)
+        }
+    
+    
+    }
+
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+        setUser({ ...user, [name]: value})
+    }
 
     //Function for scroll animation
     useEffect(()=>{
@@ -33,28 +72,28 @@ export const Home = () => {
                         </h1>
                     </div>
 
-                    <div data-aos="fade-up" className="cardDiv grid">
+                    <form onSubmit={handleSubmit} data-aos="fade-up" className="cardDiv grid">
                         <h2>Log In Form</h2>
                         <div className="usernameInput">
                             <label htmlFor="username">USERNAME</label>
                             <div className="input flex">
-                                <input type="text" placeholder="Enter username" />
+                                <input onChange={handleChange} type="text" placeholder="Enter username" name="username" />
                                 <FaRegUserCircle className="icon" />
                             </div>                            
                         </div>
                         <div className="passwordInput">
                             <label htmlFor="password">PASSWORD</label>
                             <div className="input flex">
-                                <input type="text" placeholder="Enter password" />
+                                <input onChange={handleChange} type="password" placeholder="Enter password" name="password" />
                                 <RiLockPasswordLine className="icon" />
                             </div>
                         </div>
 
                         <div className="logIn flex">
                             <CiLogin className="icon" />
-                            <span>Log In</span>
+                            <button type="submit" ><span>Log In</span></button>
                         </div>
-                    </div>
+                    </form>
 
                     <div data-aos="fade-up" className="homeFooterIcons flex">
                         <div className="rightIcons flex">

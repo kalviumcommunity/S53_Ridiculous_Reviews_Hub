@@ -89,7 +89,7 @@ router.patch('/edit-review/:reviewId', async (req, res) => {
 
     try {
         const result = await Product.findOneAndUpdate(
-            { 'ridiculous_reviews._id': reviewId }, // Match the _id within the ridiculous_reviews array
+            { 'ridiculous_reviews._id': reviewId },
             { 
                 $set: {
                     'ridiculous_reviews.$.reviewer_name': req.body.reviewer_name,
