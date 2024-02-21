@@ -35,6 +35,9 @@ app.get('/ping', (req, res) => {
 const productRouter = require('./routes/productRoute.js')
 app.use('/productRoute', productRouter)
 
+const  userRouter  = require('./routes/userRoute.js')
+app.use("/auth", userRouter);
+
 
 
 
