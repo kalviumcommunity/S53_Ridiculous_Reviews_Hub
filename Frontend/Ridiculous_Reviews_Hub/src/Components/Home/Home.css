@@ -111,7 +111,7 @@ html {
 }
 .home .homeContent .cardDiv .input .icon {
   font-size: 18px;
-  color: var(--PrimaryColor) !important;
+  color: var(--whiteColor) !important;
   margin-left: 10px;
 }
 .home .homeContent .cardDiv .logIn {

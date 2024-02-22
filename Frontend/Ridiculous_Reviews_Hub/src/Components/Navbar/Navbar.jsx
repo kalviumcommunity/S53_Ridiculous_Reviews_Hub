@@ -1,17 +1,25 @@
 import React, {useState, useEffect} from 'react'
+import { useCookies } from "react-cookie"
+import { Link, useNavigate } from 'react-router-dom'
+import './Navbar.css'
+
+//React icons
 import { FaRegLaughSquint } from "react-icons/fa";
 import { AiFillCloseCircle } from "react-icons/ai"
 import { TbGridDots } from "react-icons/tb"
-import AboutUs from '../AboutUs/AboutUs'
-import Product from '../Product/Products';
-import axios from 'axios'
-import Home from '../Home/Home'
-import SignIn from '../SignIn/SignIn'
-import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom'
-import './Navbar.css'
 
 const Navbar = () => {
   const [active, setActive] = useState('navBar')
+  const [ cookies, setCookies ] = useCookies(["access_token"])
+  const navigate = useNavigate()
+
+  //function for logout
+  const logout = () => {
+    setCookies("access_token", "")
+    setCookies("username", "")
+    window.localStorage.removeItem('userId')
+    navigate("/")
+  }
 
   //function to toggle navbar
   const showNav = () => {
@@ -50,7 +58,7 @@ const Navbar = () => {
                   </li>
 
                   <button className="btn">
-                    <p><Link to="/">Log In</Link></p>
+                    {!cookies.access_token ? <p><Link to="/">Log In</Link></p> : <button onClick={logout}>Logout</button> } 
                   </button>
                 </ul>
 

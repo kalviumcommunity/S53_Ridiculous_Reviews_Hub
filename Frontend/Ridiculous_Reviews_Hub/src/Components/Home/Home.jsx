@@ -1,7 +1,12 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
+import { useCookies } from 'react-cookie';
+import Aos from 'aos'
+import 'aos/dist/aos.css'
 import './Home.css'
 import video1 from '../../assets/homeVideo.mp4'
+
+//React icons
 import { FaRegUserCircle } from "react-icons/fa";
 import { RiLockPasswordLine } from "react-icons/ri";
 import { CiLogin } from "react-icons/ci";
@@ -10,8 +15,6 @@ import { AiOutlineInstagram } from "react-icons/ai";
 import { SiTripadvisor } from "react-icons/si";
 import { BsListTask } from "react-icons/bs";
 import { TbApps } from "react-icons/tb";
-import Aos from 'aos'
-import 'aos/dist/aos.css'
 
 
 
@@ -21,6 +24,8 @@ export const Home = () => {
         username: "",
         password: ""
     })
+
+    const [ cookie, setCookies ] = useCookies(["access_token"])
     
     //Function to handle the submit
     const handleSubmit = async (e) => {
@@ -41,7 +46,12 @@ export const Home = () => {
                 username: "",
                 password: ""
             })
-            window.location.reload();
+
+            setCookies("access_token", response.data.token);
+            setCookies("username", response.data.username)
+            window.localStorage.setItem("userId", response.data.userId)
+
+            // window.location.reload();
         } catch (error) {
             console.log(error)
         }
@@ -91,7 +101,7 @@ export const Home = () => {
 
                         <div className="logIn flex">
                             <CiLogin className="icon" />
-                            <button type="submit" ><span>Log In</span></button>
+                            <button type="submit" ><span><p style={{color: "black"}}>Log In</p></span></button>
                         </div>
                     </form>
 
