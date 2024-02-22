@@ -42,16 +42,16 @@ export const Home = () => {
             const response = await axios.post(`https://s53-ridiculous-reviews-hub.onrender.com/auth/login`, user)
             alert("User logged in Sucessfully")
             console.log('User logged successfully', response.data);
+            
+            setCookies("access_token", response.data.token);
+            setCookies("username", response.data.username)
+            window.localStorage.setItem("userId", response.data.userId)
+            
+            window.location.reload();
             setUser({
                 username: "",
                 password: ""
             })
-
-            setCookies("access_token", response.data.token);
-            setCookies("username", response.data.username)
-            window.localStorage.setItem("userId", response.data.userId)
-
-            // window.location.reload();
         } catch (error) {
             console.log(error)
         }

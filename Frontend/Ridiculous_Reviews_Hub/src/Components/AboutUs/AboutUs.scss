@@ -1,0 +1,52 @@
+/* AboutUs.scss */
+
+.about-us-container {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image: url('https://st.depositphotos.com/1003593/3947/i/450/depositphotos_39479909-stock-photo-about-us-blue-marker.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.about-us-content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Add a semi-transparent white background to make text readable */
+}
+
+.about-us-content h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+}
+
+.about-us-content section {
+    margin-bottom: 50px;
+}
+
+.about-us-content h2 {
+    color: #444;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.about-us-content p {
+    color: #666;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.about-us-content ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.about-us-content ul li {
+    color: #666;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}

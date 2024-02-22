@@ -45,7 +45,7 @@ function Footer() {
             </div>
 
             <div data-aos="fade-up" className="footerParagraph">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius minima quasi mollitia. Exercitationem repudiandae fugit magnam. Tempora cum ab laudantium expedita excepturi, architecto itaque ea, magni nobis repudiandae ex adipisci.
+            We treasure your questions, feedback, and suggestions. Our dedication to improvement is fueled by your valuable input. Reach out anytime; we're eager to enhance your experience together.
             </div>
 
             <div data-aos="fade-up" className="footerSocials flex">

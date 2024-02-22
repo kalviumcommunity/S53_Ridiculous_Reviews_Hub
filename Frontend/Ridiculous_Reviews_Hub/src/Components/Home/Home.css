@@ -99,6 +99,7 @@ html {
   background: none;
   border: none;
   outline: none;
+  color: var(--textColor);
   width: 100%;
   font-size: 13px;
   font-weight: 500;
@@ -179,6 +180,9 @@ html {
   }
   .home .homeContent .cardDiv .input {
     margin-bottom: 1rem;
+  }
+  .home .homeContent .cardDiv .input input {
+    color: black;
   }
   .home .homeContent .cardDiv .searchOptions {
     bottom: -1rem;
