@@ -21,13 +21,13 @@ function SignIn() {
 
         try{
            const response = await axios.post(`https://s53-ridiculous-reviews-hub.onrender.com/auth/register`, formData)
-           alert("Registered Sucessfully")
+           alert("Registration completed! Now login")
             console.log('User Registered Successfully', response.data);
             setFormData({
                 username: "",
                 password: ""
             })
-            window.location.reload();
+            // window.location.reload();
         } catch (error) {
             console.log('Error:', error);
         }
@@ -62,7 +62,7 @@ function SignIn() {
                             required
                         />
                     </div>
-                    <button type="submit">Sign Up</button>
+                    <button className='btn' type="submit">Sign Up</button>
                 </form>
             </div>
         </>
