@@ -49,8 +49,8 @@ function ReviewModal({ isOpen, reviews, onRequestClose, productId }) {
                             <AccordionItem>
                                 <h2>
                                     <AccordionButton>
-                                        <Box as="span" flex='1' textAlign='left' color='black'>
-                                            Review {index+1}
+                                        <Box as="span" flex='1' textAlign='left' color='GrayText'>
+                                            Section {index+1} title
                                         </Box>
                                         <AccordionIcon />
                                     </AccordionButton>
