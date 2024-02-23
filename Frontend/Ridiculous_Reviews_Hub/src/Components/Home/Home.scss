@@ -104,6 +104,7 @@ html{
                     background: none;
                     border: none;
                     outline: none;
+                    color: var(--textColor);
                     width: 100%;
                     font-size: 13px;
                     font-weight: 500;
@@ -198,6 +199,10 @@ html{
 
                 .input{
                     margin-bottom: 1rem;
+
+                    input{
+                        color: black;
+                    }
                 }
 
                 .searchOptions{

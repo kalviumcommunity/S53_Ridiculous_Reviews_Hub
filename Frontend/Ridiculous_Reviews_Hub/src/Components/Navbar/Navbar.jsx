@@ -58,7 +58,7 @@ const Navbar = () => {
                   </li>
 
                   <button className="btn">
-                    {!cookies.access_token ? <p><Link to="/">Log In</Link></p> : <button onClick={logout}>Logout</button> } 
+                    {!cookies.access_token ? <p><Link to="/">Log In</Link></p> : <p onClick={logout}>Logout</p> } 
                   </button>
                 </ul>
 
